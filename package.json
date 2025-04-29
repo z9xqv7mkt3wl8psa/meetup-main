@@ -1,0 +1,103 @@
+{
+  "name": "meetup",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "author": {
+    "name": "Mahitha Pandaraboina",
+    "email": "mahitha.pandaraboina@gmail.com",
+    "url": "https://github.com/"
+  },
+  "description": "meetup",
+  "keywords": [
+    "reactjs",
+    "nextjs",
+    "vercel",
+    "react",
+    "getstream",
+    "stream",
+    "shadcn",
+    "shadcn-ui",
+    "radix-ui",
+    "cn",
+    "clsx",
+    "zoom-clone",
+    "realtime-video",
+    "realtime-chat",
+    "live-audio",
+    "live-video",
+    "live-chat",
+    "radix-toast",
+    "lucide-react",
+    "next-themes",
+    "postcss",
+    "prettier",
+    "react-dom",
+    "tailwindcss",
+    "tailwindcss-animate",
+    "ui/ux",
+    "js",
+    "ts",
+    "javascript",
+    "typescript",
+    "eslint",
+    "html",
+    "css"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//meetup.git"
+  },
+  "homepage": "https://github.com//meetup#readme",
+  "bugs": {
+    "url": "https://github.com//meetup/issues"
+  },
+  "funding": [
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/"
+    },
+    {
+      "type": "Buy me a coffee",
+      "url": "https://www.buymeacoffee.com/"
+    }
+  ],
+  "dependencies": {
+    "@clerk/nextjs": "^5.7.5",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.1.2",
+    "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-toast": "^1.2.6",
+    "@stream-io/node-sdk": "^0.4.19",
+    "@stream-io/video-react-sdk": "^1.7.27",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.486.0",
+    "next": "14",
+    "react": "^18",
+    "react-datepicker": "^7.5.0",
+    "react-dom": "^18",
+    "tailwind-merge": "^3.1.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19.1.1",
+    "@types/react-datepicker": "^7.0.0",
+    "@types/react-dom": "^19.1.2",
+    "eslint": "^9",
+    "eslint-config-next": "15.0.3",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "postcss": "^8",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5"
+  }
+}
