@@ -19,7 +19,7 @@ export const Navbar = () => {
         />
 
         <p className="text-[26px] font-extrabold text-white max-sm:hidden">
-          Meetup
+          Prasunet Meetup
         </p>
       </Link>
 
@@ -28,14 +28,7 @@ export const Navbar = () => {
           <UserButton afterSignOutUrl="/sign-in" />
         </SignedIn>
 
-        <Link
-          href={links.sourceCode}
-          target="_blank"
-          rel="noreferrer noopener"
-          title="Source Code"
-        >
-          <Image src="/icons/github.svg" alt="GitHub" height={80} width={80} />
-        </Link>
+        
 
         <MobileNav />
       </div>
