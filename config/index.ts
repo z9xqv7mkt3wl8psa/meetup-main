@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 export const siteConfig: Metadata = {
   title: "Meetup",
   description: "Modern Next.js powered Video calling app",
@@ -42,12 +40,12 @@ export const siteConfig: Metadata = {
     name: "Mahitha Pandaraboina",
     url: "https://github.com/",
   },
-} as const;
-
-export const appConfig = {
-  appName: "meetup",
-} as const;
-
-export const links = {
-  sourceCode: "",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 } as const;
