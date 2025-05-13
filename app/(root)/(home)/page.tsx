@@ -1,20 +1,19 @@
-"use client";
-
+// ❌ REMOVE "use client"
 import { MeetingTypeList } from "@/components/meeting-type-list";
-import { useGetCalls } from "@/hooks/use-get-calls";
+import { getCalls } from "@/lib/server/get-calls"; // server-side version of useGetCalls
 
-const HomePage = () => {
+export const dynamic = "force-dynamic"; // Required if fetching dynamic data server-side
+
+const HomePage = async () => {
   const now = new Date();
-  const { upcomingCalls } = useGetCalls();
+  const { upcomingCalls } = await getCalls();
 
   const time = now.toLocaleTimeString("en-US", {
     hour: "2-digit",
     minute: "2-digit",
   });
 
-  const date = new Intl.DateTimeFormat("en-US", { dateStyle: "full" }).format(
-    now
-  );
+  const date = new Intl.DateTimeFormat("en-US", { dateStyle: "full" }).format(now);
 
   return (
     <section className="flex size-full flex-col gap-10 text-white">
@@ -23,9 +22,7 @@ const HomePage = () => {
           <h2 className="glassmorphism max-w-[270px] rounded py-2 text-center text-base font-normal">
             {upcomingCalls?.length === 0
               ? "No upcoming meeting"
-              : upcomingCalls?.length &&
-                `Upcoming meeting at: 
-                ${upcomingCalls[
+              : `Upcoming meeting at: ${upcomingCalls[
                   upcomingCalls.length - 1
                 ].state?.startsAt?.toLocaleTimeString("en-US", {
                   hour: "2-digit",
@@ -35,7 +32,6 @@ const HomePage = () => {
 
           <div className="flex flex-col gap-2">
             <h1 className="text-4xl font-extrabold lg:text-7xl">{time}</h1>
-
             <p className="text-lg font-medium text-sky-1 lg:text-2xl">{date}</p>
           </div>
         </div>
