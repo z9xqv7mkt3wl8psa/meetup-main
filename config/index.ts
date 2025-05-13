@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 export const siteConfig: Metadata = {
   title: "Meetup",
   description: "Modern Next.js powered Video calling app",
@@ -35,7 +37,7 @@ export const siteConfig: Metadata = {
     "eslint",
     "html",
     "css",
-  ] as Array<string>,
+  ],
   authors: {
     name: "Mahitha Pandaraboina",
     url: "https://github.com/",
@@ -48,4 +50,12 @@ export const siteConfig: Metadata = {
       follow: true,
     },
   },
+};
+
+export const appConfig = {
+  appName: "meetup",
 } as const;
+
+export const links = {
+  sourceCode: "https://github.com/your-repo", // ← Replace with actual repo link if needed
+};
