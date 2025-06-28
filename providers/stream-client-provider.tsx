@@ -23,7 +23,11 @@ export const StreamClientProvider = ({ children }: PropsWithChildren) => {
       apiKey,
       user: {
         id: user?.id,
-        name: user?.username || user?.id,
+        name:
+          `${user?.firstName ?? ""} ${user?.lastName ?? ""}`.trim() ||
+          user?.username ||
+          user?.primaryEmailAddress?.emailAddress ||
+          user?.id,
         image: user?.imageUrl,
       },
       tokenProvider,
