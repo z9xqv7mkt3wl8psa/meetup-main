@@ -9,7 +9,6 @@ export const getCalls = async () => {
   return { upcomingCalls };
 };
 */
-import { currentUser } from "@clerk/nextjs/server"; // if needed
 
 // Dummy db to prevent errors
 export const db = {
