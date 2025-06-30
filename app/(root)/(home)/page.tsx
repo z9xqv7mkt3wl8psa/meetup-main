@@ -22,9 +22,9 @@ const HomePage = async () => {
           <h2 className="glassmorphism max-w-[270px] rounded py-2 text-center text-base font-normal">
             {upcomingCalls?.length === 0
               ? "No upcoming meeting"
-              : `Upcoming meeting at: ${upcomingCalls[
-                  upcomingCalls.length - 1
-                ].state?.startsAt?.toLocaleTimeString("en-US", {
+              : `Upcoming meeting at: ${new Date(
+                  upcomingCalls[upcomingCalls.length - 1].time
+                ).toLocaleTimeString("en-US", {
                   hour: "2-digit",
                   minute: "2-digit",
                 })}`}

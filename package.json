@@ -8,11 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "author": {
-    "name": "Mahitha Pandaraboina",
-    "email": "mahitha.pandaraboina@gmail.com",
-    "url": "https://github.com/"
-  },
+  
   "description": "meetup",
   "keywords": [
     "reactjs",
