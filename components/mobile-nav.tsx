@@ -49,7 +49,8 @@ export const MobileNav = () => {
               {SIDEBAR_LINKS.map((item) => {
                 const isActive =
                   pathname === item.route ||
-                  pathname.startsWith(`${item.route}/`);
+                  pathname?.startsWith(`${item.route}/`);
+
 
                 return (
                   <SheetClose key={item.route} asChild>
