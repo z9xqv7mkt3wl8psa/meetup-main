@@ -15,7 +15,8 @@ export const Sidebar = () => {
       <div className="flex flex-1 flex-col gap-6">
         {SIDEBAR_LINKS.map((item) => {
           const isActive =
-            pathname === item.route || pathname.startsWith(`${item.route}/`);
+            pathname === item.route || pathname?.startsWith(`${item.route}/`);
+
 
           return (
             <Link
