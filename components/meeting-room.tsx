@@ -9,9 +9,11 @@ import {
   SpeakerLayout,
   useCallStateHooks,
 } from "@stream-io/video-react-sdk";
-import { LayoutList, Users } from "lucide-react";
+import { LayoutList, Users, MessageCircle } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
+
+import { ChatBox } from "./chat-box";
 
 import {
   DropdownMenu,
@@ -32,11 +34,12 @@ export const MeetingRoom = () => {
   const searchParams = useSearchParams();
   const [showParticipants, setShowParticipants] = useState(false);
   const [layout, setLayout] = useState<CallLayoutType>("speaker-left");
+  const [showChat, setShowChat] = useState(false); // Chat toggle state
 
   const { useCallCallingState } = useCallStateHooks();
   const callingState = useCallCallingState();
 
-  const isPersonalRoom = !!searchParams.get("personal");
+  const isPersonalRoom = searchParams ? !!searchParams.get("personal") : false;
 
   if (callingState !== CallingState.JOINED) return <Loader />;
 
@@ -112,7 +115,24 @@ export const MeetingRoom = () => {
           </div>
         </button>
 
+        {/* Chat Icon Button */}
+        <button onClick={() => setShowChat((prev) => !prev)} title="Open Chat">
+          <div className="cursor-pointer rounded-2xl bg-[#19232D] px-4 py-2 hover:bg-[#4C535B]">
+            <MessageCircle size={20} className="text-white" />
+          </div>
+        </button>
+
         {!isPersonalRoom && <EndCallButton />}
+      </div>
+
+      {/* Sliding Chat Window */}
+      <div
+        className={cn(
+          "fixed right-0 top-0 h-full w-80 bg-gray-800 shadow-lg transition-transform duration-300",
+          showChat ? "translate-x-0" : "translate-x-full"
+        )}
+      >
+        <ChatBox onClose={() => setShowChat(false)} />
       </div>
     </div>
   );
